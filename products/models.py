@@ -40,8 +40,8 @@ class Products(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=12, decimal_places=2)
-    producer = models.ForeignKey(Producer, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    producer = models.ForeignKey(Producer, on_delete=models.CASCADE, blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
